@@ -1,0 +1,34 @@
+remove duplicates in a query response
+1. Pseudo: posts = Post.body.all.distinct()
+
+   SQLite: SELECT DISTINCT body FROM post;
+
+filter records using inequalities, pattern matching, ranges, and boolean logic
+2. Pseudo: posts = Post.where(id > 2)
+
+   SQLite: SELECT * FROM post WHERE id > 2;
+
+sort records in a particular order
+3. Pseudo: posts = Post.order(:full_name)
+
+   SQLite: SELECT * FROM post ORDER BY full_name;
+
+limit the number of records returned
+4. Pseudo: posts = Post.limit(10)
+
+   SQLite: SELECT * FROM post LIMIT 10;
+
+group records into sections
+5. Pseudo: Post.group(:title)
+
+   SQLite: SELECT * FROM post GROUP BY title;
+
+perform calculations using aggregate functions
+6. Pseudo: User.average(:age)
+
+   SQLite: SELECT AVG(age) FROM user;
+
+join tables using cross join, inner join, and outer join
+7. Pseudo: Post.joins(:user)
+
+   SQLite: SELECT * FROM post JOIN user ON user.user_id = user.id;
